@@ -1,0 +1,49 @@
+body{
+    font-family: "Lora", "Noto Sans JP";
+    color: #847A61;
+}
+
+.thanks__content {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.thanks__background {
+    width: 100%;
+    margin-left: auto;
+    margin-top: 20%;
+    text-align: center;
+    font-size: 250px;
+    color: #f4f3f0;
+    z-index: 1;
+}
+
+.thanks__text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.thanks__button {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    border: none;
+    background: #847A61;
+    width: 100px;
+    height: 30px;
+}
+
+.thanks__button-text {
+    text-decoration: none;
+    color: #FFF;
+    cursor: pointer;
+}

@@ -1,0 +1,22 @@
+body{
+    font-family: "Lora", "Noto Sans JP";
+    color: #847A61;
+}
+
+.header {
+    background-color: #FFF;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 20px 15px;
+    text-align: center;
+    max-width: 1230px;
+}
+
+.header__logo {
+    color: #847A61;
+    text-decoration: none;
+    font-size: 30px;
+}

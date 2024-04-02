@@ -1,0 +1,119 @@
+.modal-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    overflow: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease-out;
+    z-index: 9;
+}
+
+.modal-container::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.modal-container.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-body {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 500px;
+    width: 90%;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.round_btn {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ac9f93; /* 枠の調整 */
+    border-radius: 50%;  /* 丸みの度合い */
+    background: #fff; /* ボタンの背景色 */
+}
+
+.round_btn::before, .round_btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px; /* 棒の幅（太さ） */
+    height: 22px; /* 棒の高さ */
+    background: #ac9f93; /* バツ印の色 */
+}
+
+.round_btn::before {
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.round_btn::after {
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.delete__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.form {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.delete-table__inner {
+    width: 100%;
+}
+
+.delete-table__header {
+    padding: 15px;
+    width: 30%;
+    color: #FFF;
+}
+
+.delete-table__text {
+    padding: 15px;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+.delete-table__text input {
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #9d8e81;
+    font-size: 16px;
+}
+
+.form__button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.form__button-submit {
+    padding: 10px;
+    width: 15%;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: red;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+}

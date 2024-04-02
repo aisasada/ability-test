@@ -11,10 +11,11 @@ class Contact extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo('App\Models\Category');
     }
 
     protected $fillable = [
+        'category_id',
         'first_name',
         'last_name',
         'email',
