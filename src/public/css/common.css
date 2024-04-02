@@ -3,20 +3,66 @@ body{
     color: #847A61;
 }
 
+input::placeholder {
+	color: #847A61;
+}
+textarea::placeholder {
+	color: #847A61;
+}
+
+select {
+    color: #847A61;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #8b7969;
+}
+
+input[type="radio"]:checked {
+    border-color: #8b7969;
+    background-color: #8b7969;
+}
+
 .header {
     background-color: #FFF;
     border-bottom: 1px solid #DCDCDC;
 }
 
 .header__inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     margin: 0 auto;
     padding: 20px 15px;
     text-align: center;
-    max-width: 1230px;
+    max-width: 1500px;
 }
 
 .header__logo {
+    grid-column:  2;
+    justify-self: center;
     color: #847A61;
     text-decoration: none;
     font-size: 30px;
+}
+
+.header-nav {
+    grid-column:  3;
+    justify-self: right;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: 6f#f6f6f6;
+    width: 80px;
+    border: ipx #f1ece6;
+    text-decoration: none;
+}
+
+.header-nav__link {
+    color: #847A61;
+    text-decoration: none;
 }

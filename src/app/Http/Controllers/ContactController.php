@@ -46,34 +46,35 @@ class ContactController extends Controller
         return view('thanks');
     }
 
-    public function admin()
+    public function search(Request $request)
     {
-        $contacts = Contact::with('category')->Paginate(7);
-        $categories = Category::all();
+        $query = Contact::query();
+
+        $input = $request->input('input');
+
+        $query->where(function($q) use ($input) {
+        $q->where('first_name', 'LIKE', "%{$input}%")
+        ->orWhere('last_name', 'LIKE', "%{$input}%")
+        ->orWhere('email', 'LIKE', "%{$input}%");
+    });
+
+        if ($request->filled('gender')) {
+            $query->where('gender', $request->gender);
+        }
+
+        if ($request->filled('content')) {
+            $query->where('category_id', $request->content);
+        }
+
+        if ($request->filled('date')) {
+            $query->whereDate('created_at', $request->date);
+        }
+
+        $contacts = $query->paginate(7);
+        $categories = Category::all(); 
+
         return view('admin', compact('contacts', 'categories'));
     }
 
-    public function login()
-    {
-        return view('login');
-    }
 
-    public function register()
-    {
-        return view('register');
-    }
-
-    public function find()
-    {
-        return view('find', ['input' => '']);
-    }
-    public function  search(Request $request)
-    {
-        $item = Contact::where('first_name', 'last_name', 'email', 'Like',"%{$request->input}%")->first();
-        $param = [
-            'input' => $request->input,
-            'item' => $item
-        ];
-        return view('find', $param);
-    }
 }

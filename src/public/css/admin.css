@@ -1,13 +1,3 @@
-nav {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.header-nav {
-  display: block;
-  margin-right: 0;
-}
-
 .admin__content {
   margin: 0 auto;
   padding: 30px 15px;

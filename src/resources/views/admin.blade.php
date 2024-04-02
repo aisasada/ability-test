@@ -21,10 +21,10 @@
   <div class="admin__heading">
     <h2>Admin</h2>
   </div>
-  <form action="find" class="find-form" method="post">
+  <form action="{{ route('search') }}" class="find-form" method="get">
     <div class="find-form__item">
       @csrf
-      <input class="find-form__item-input" type="text" name="input" placeholder="名前やメールアドレスを入力してください" value="{{ $input??'' }}" />
+      <input class="find-form__item-input" type="text" name="input" placeholder="名前やメールアドレスを入力してください" value="{{ $searchTerm ?? '' }}" />
       <select name="gender">
         <option value="" selected disabled>性別</option>
         <option value="1">男性</option>
@@ -42,7 +42,9 @@
         <button class="find-form__button-submit" type="submit">検索</button>
       </div>
       <div class="find-form__reset--button">
-        <button class="find-form__button-submit" type="reset">リセット</button>
+        <button class="find-form__button-submit" type="reset">
+          <a href="/admin/search">リセット</a>
+        </button>
       </div>
     </div>
   </form>
@@ -77,8 +79,8 @@
         <td class="admin-table__item">{{ $contact->email }}</td>
         <td class="admin-table__item"> {{ $contact->category->content }}</td>
         <td class="admin-table__item">
-          <button class='admin-table__item--button' type="button">
-            <a href="/delete/{{ $contact->id }}">詳細</a>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal">
+            詳細
           </button>
         </td>
       </tr>
